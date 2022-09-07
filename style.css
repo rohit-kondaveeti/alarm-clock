@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+   .class-flex {
+    display: flex;
+  }
+  
+  .btn {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+  select {
+    appearance: none;
+    outline: black;
+    background-color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-right: 4px;
+    cursor: pointer;
+    color: #0E141B;
+    border-color: black;
+  }
+  
+  .mb {
+    margin-bottom: 1rem;
+  }
+ 
+  .main-container {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(188,162,132,1) 0%, rgba(9,89,121,1) 35%, rgba(255,0,37,0.7887487758775386) 100%);;
+  }
+  
+  .clock-container {
+    padding: 20px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width:500px;   
+    background-color: #96C2F9;
+    margin: auto;
+    margin-top: 30px;
+  }
+  
+  .current-time {
+    font-size: 24px;
+    color: black;
+  }
+  
+  .alarm-form {
+    justify-content: space-between;
+    width: 100%;
+
+  }
+  
+  .submit-button {
+    border-color: black;
+    border: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .set-alarm-container {
+    width: 100%;
+  }
+  
+  .set-alarm-container .set-alarm-container-title {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .alarm {
+    justify-content: space-between;
+    border-radius: 30px;
+    padding: 8px 16px;
+    align-items: center;
+  
+  }
+  .alarm .delete-alarm {
+    border-radius: 5px;
+    background-color: rgba(230, 13, 13, 0.918);
+    font-weight: bold;
+    color: #fff;
+    font-size:xx-medium;
+  }
+  
+  .time {
+    color: #0E141B;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .btn:focus,
+  .btn:hover {
+     background-color: #62ef7f;
+  }
+  
+  .title{
+    background-color: #0E141B;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    
+  }
+  .title h1 {
+    padding-top: 20px !important;
+  }
+
+  #current-time {
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  .btn.delete-alarm:hover {
+    background: #fff;
+    color: red;
+  }
