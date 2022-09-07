@@ -41,7 +41,9 @@ function getInput(e) {
 function setAlarm(time, fetching = false) {
   const alarm = setInterval(() => {
     if (time === getCurrentTime()) {
-      alert("Alarm Ringing");
+      var audio = new Audio('audio_file.mp3');
+      audio.play();
+    
     }
     }, 500);
 
