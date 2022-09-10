@@ -43,15 +43,35 @@ function setAlarm(time, fetching = false) {
     if (time === getCurrentTime()) {
       var audio = new Audio('audio_file.mp3');
       audio.play();
-    
+      audio.loop = true;
+     
     }
-    }, 500);
+    });
 
   addAlaram(time, alarm);
   if (!fetching) {
     saveAlarm(time);
   }
 }
+//stoping alarm
+const stopingAlarm = document.querySelector(".stop-alarm");
+stopingAlarm.addEventListener("click", stopAlarm);
+
+function stopAlarm(){
+  
+ // var audio = new Audio('audio_file.mp3');
+  //audio.stop();
+  let test = JSON.parse(localStorage.getItem('alarms'));
+  let data = [];
+  for(var a of test){
+    if(a>getCurrentTime()) data.push(a);
+    //if(a<getCurrentTime()) data.push(a);
+  }
+  localStorage.removeItem('alarms');
+  localStorage.setItem('alarms',JSON.stringify(data));
+  location.reload();
+}
+
 // getting current time
 function getCurrentTime() {
   let time = new Date();
@@ -66,7 +86,7 @@ function getCurrentTime() {
   return time;
 }
 
-// Alarm setting
+// display alarm in front view 
 function addAlaram(time, intervalId) {
   const alarm = document.createElement("div");
   alarm.classList.add("alarm", "mb", "class-flex");
@@ -89,6 +109,7 @@ function checkAlarams() {
   return alarms;
 }
 
+// saving alarm in localstorage
 function saveAlarm(time) {
   const alarms = checkAlarams();
 
@@ -100,9 +121,10 @@ function fetchAlarm() {
   const alarms = checkAlarams();
 
   alarms.forEach((time) => {
-    setAlarm(time, true);
-  });
+    setAlarm(time, true); 
+  }); 
 }
+// adding dropdown menu 
 function dropDownMenu(start, end, element) {
   for (let i = start; i <= end; i++) {
     const dropDown = document.createElement("option");
@@ -128,6 +150,7 @@ function deleteAlarm(event, time, intervalId) {
   alarm.remove();
 }
 
+// clearing in localstorage
 function deleteAlarmFromLocal(time) {
   const alarms = checkAlarams();
 
